@@ -4,12 +4,13 @@ import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
 import Dashboard from "./pages/Dashboard";
 import Users from "./pages/Users";
-import Messages from "./pages/Messages";
+import Transaction from "./pages/Transaction";
 import FileManager from "./pages/FileManager";
 import Analytics from "./pages/Analytics";
 import Order from "./pages/Order";
 import Saved from "./pages/Saved";
 import Setting from "./pages/Setting";
+
 function App() {
   return (
     <Router>
@@ -17,7 +18,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Dashboard />} />
           <Route path="/users" element={<Users />} />
-          <Route path="/messages" element={<Messages />} />
+          <Route path="/transaction" element={<Transaction />} />
           <Route path="/analytics" element={<Analytics />} />
           <Route path="/file-manager" element={<FileManager />} />
           <Route path="/order" element={<Order />} />

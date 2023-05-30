@@ -1,6 +1,6 @@
 import { NavLink } from "react-router-dom";
 import { FaBars, FaHome, FaLock, FaMoneyBill, FaUser } from "react-icons/fa";
-import { MdMessage } from "react-icons/md";
+import { GrTransaction } from "react-icons/gr";
 import { BiAnalyse, BiSearch } from "react-icons/bi";
 import { BiCog } from "react-icons/bi";
 import { AiFillHeart, AiTwotoneFileExclamation } from "react-icons/ai";
@@ -8,6 +8,8 @@ import { BsCartCheck } from "react-icons/bs";
 import { useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import SidebarMenu from "./SidebarMenu";
+import logo from "./kpdm.png"
+
 const routes = [
   {
     path: "/",
@@ -20,9 +22,9 @@ const routes = [
     icon: <FaUser />,
   },
   {
-    path: "/messages",
-    name: "Messages",
-    icon: <MdMessage />,
+    path: "/transaction",
+    name: "Transaction",
+    icon: <GrTransaction />,
   },
   {
     path: "/analytics",
@@ -128,7 +130,7 @@ const SideBar = ({ children }) => {
       <div className="main-container">
         <motion.div
           animate={{
-            width: isOpen ? "200px" : "45px",
+            width: isOpen ? "250px" : "45px",
 
             transition: {
               duration: 0.5,
@@ -148,7 +150,7 @@ const SideBar = ({ children }) => {
                   exit="hidden"
                   className="logo"
                 >
-                  DoSomeCoding
+                 <img src={logo} className="kpdm" animate="show" exit="hidden"/>
                 </motion.h1>
               )}
             </AnimatePresence>
@@ -173,7 +175,8 @@ const SideBar = ({ children }) => {
                 />
               )}
             </AnimatePresence>
-          </div>
+            </div>
+          
           <section className="routes">
             {routes.map((route, index) => {
               if (route.subRoutes) {

@@ -3,6 +3,7 @@ import React, { useState, useEffect } from "react";
 import { FaAngleDown } from "react-icons/fa";
 import { NavLink } from "react-router-dom";
 
+
 const menuAnimation = {
   hidden: {
     opacity: 0,
